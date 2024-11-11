@@ -1,0 +1,53 @@
+import numpy as np 
+import pandas as pd 
+from bs4 import BeautifulSoup
+import requests
+from pymongo import MongoClient
+url="C:/Users/22803012/Downloads/New Institutes.csv"
+
+data=pd.read_csv(url)
+data.head()
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score
+import requests
+
+
+client = MongoClient("") 
+db = client["DATABASE"] 
+collection = db["coll"] 
+
+
+collection.insert_many(df.to_dict("records"))
+print("Data inserted into MongoDB.")
+
+for i in range len({State}):
+    applicants=collection.find(df({'State'}))
+    print('{State}')
+    print("no of applicants")
+    print(len(applicants))
+
+
+
+from sklearn.svm import LinearSVC
+
+
+x=data.pop['approval']
+y=data['approval']
+
+x_test,x_train,y_test,y_train=train_tes_split(x,y,test_size=0.2,random_state=4)
+model=LinearSVC(random_state=4)
+model.fit(x_train,y_train)
+pred=model.predict(x_test)
+print(pred)
+from sklearn.naivebayes import GaussianBM
+model=GaussianBM()
+model.fit(x_train,y_train)
+pred=model.predict(x_test)
+print(pred)
+import matplotlib 
+from matplotlib import  pyplot as plt
+data.plot.bar(x='Region',y='Program')
+
+
